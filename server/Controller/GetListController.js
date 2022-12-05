@@ -9,7 +9,5 @@ const getList = function (app) {
                 res.send(result)
             }
         })
-    })
-
-    
+    })   
 }
