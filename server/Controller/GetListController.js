@@ -1,13 +1,17 @@
-const connection  = require("../config/Database")
+const GetListAPI = function (app) {
+  app.get("/vms/dms/v1/devices/:Device_Id/", (req, res) => {
+    try {
+      const { device_id } = req.params;
+      let body = {
+        message: `Device: ${device_id}`,
+        items: ["Camera1", "Camera2", "Camera3"],
+      };
 
-const getList = function (app) {
-    app.get("/api/getList", (req, res) => {
-        const sqlGet = "SELECT * FROM list"
-        connection.query(sqlGet, (err, result) => {
-            if (err) throw err
-            else if (result) {
-                res.send(result)
-            }
-        })
-    })   
-}
+      res.json(body);
+    } catch (error) {
+      res.send(error);
+    }
+  });
+};
+
+module.exports = GetListAPI;

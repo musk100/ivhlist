@@ -1,12 +1,13 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-require("dotenv").config();
+// const hostname = "127.0.0.1";
+const port = 3000;
 
-const GetListController = require("./Controller/GetListController");
+/* POSTMAN */
+const GetListAPI = require("./Controller/GetListController");
 
 app.use(express.json());
-const port = process.env.API_PORT;
 
 app.use(
   cors({
@@ -15,5 +16,25 @@ app.use(
   })
 );
 
+app.get("/", (req, res) => {
+  res.setHeader("Content-Type", "application/json");
+
+  let body = {
+    message: "Hello World!",
+    items: ["Camera1", "Camera2", "Camera3"],
+  };
+
+  const { headers, method, query, url } = req;
+  const responseBody = { headers, method, query, url, body };
+
+  res.send(JSON.stringify(responseBody));
+});
+
 //routes
-GetListController(app);
+GetListAPI(app);
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+
+module.export = app;

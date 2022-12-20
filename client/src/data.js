@@ -1,26 +1,26 @@
 export const dummyData = [
   {
-    company: "Canon",
-    ticker: "CN",
+    company: "Camera 1",
+    ticker: "Channel 1",
   },
   {
-    company: "Sony",
-    ticker: "SN",
+    company: "Camera 2",
+    ticker: "Channel 2",
   },
   {
-    company: "Nikon",
-    ticker: "NK",
+    company: "Camera 3",
+    ticker: "Channel 3",
   },
   {
-    company: "Fujifilm",
-    ticker: "FF",
+    company: "Camera 4",
+    ticker: "Channel 4",
   },
   {
-    company: "Panasonic",
-    ticker: "PS",
+    company: "Camera 5",
+    ticker: "Channel 5",
   },
   {
-    company: "Olympus",
-    ticker: "OP",
+    company: "Camera 6",
+    ticker: "Channel 6",
   },
 ];
