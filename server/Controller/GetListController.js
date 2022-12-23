@@ -1,7 +1,7 @@
 const GetListAPI = function (app) {
-  app.get("/vms/dms/v1/devices/:Device_Id/", (req, res) => {
+  app.get("/vms/dms/v1/devices/", (req, res) => {
     try {
-      const { device_id } = req.params;
+      const { device_id } = req.body;
       let body = {
         message: `Device: ${device_id}`,
         items: ["Camera1", "Camera2", "Camera3"],

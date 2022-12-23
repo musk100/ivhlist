@@ -16,20 +16,6 @@ app.use(
   })
 );
 
-app.get("/", (req, res) => {
-  res.setHeader("Content-Type", "application/json");
-
-  let body = {
-    message: "Hello World!",
-    items: ["Camera1", "Camera2", "Camera3"],
-  };
-
-  const { headers, method, query, url } = req;
-  const responseBody = { headers, method, query, url, body };
-
-  res.send(JSON.stringify(responseBody));
-});
-
 //routes
 GetListAPI(app);
 
